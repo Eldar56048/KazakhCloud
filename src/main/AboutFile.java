@@ -42,8 +42,8 @@ public class AboutFile extends File{
         return file.isDirectory();
      }
 
-    public  ArrayList<File> getFiles(File rootFile,String filename) {
-        ArrayList<File> fileList = new ArrayList<>();
+    public  ArrayList<AboutFile> getFiles(File rootFile,String filename) {
+        ArrayList<AboutFile> fileList = new ArrayList<>();
         if (rootFile.isDirectory()) {
             System.out.println("searching: " + rootFile.getAbsolutePath());
             File[] directoryFiles = rootFile.listFiles();
@@ -53,7 +53,7 @@ public class AboutFile extends File{
                         getFiles(file,filename);
                     } else {
                         if (file.getName().equalsIgnoreCase(filename)) {
-                            fileList.add(file);
+                            fileList.add(new AboutFile(file));
                         }
                     }
                 }

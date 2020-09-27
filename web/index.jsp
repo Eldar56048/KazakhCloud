@@ -1,4 +1,4 @@
-<%@include file="jsp/header.jsp"%>
+<%@include file="jsp/header.jsp"%> <%--There we include header.php--%>
     <%String path = (String) request.getAttribute("Path");
     %>
     <%!
@@ -20,14 +20,14 @@
         }
     %>
     <div class="all">
-        <h1 style="font-size:2vw;">Path Name: <%=path%></h1>
+        <h1 style="font-size:2vw;">Path Name: <%=path%></h1><%--There we can se path of the file--%>
     </div>
     <div class="all">
         <button >
             <a href="<%=request.getContextPath()%>/FirstServlet?fileRoot=<%=backPath(path)%>">Back</a>
         </button>
         <button >
-            <form method="post" action="<%=request.getContextPath()%>/Upload"
+            <form method="post" action="<%=request.getContextPath()%>/Upload"<%--This form for upload files--%>
                   enctype="multipart/form-data">
                 Select file to upload: <input  type="file" name="myfile"><br />
                 <br />
@@ -39,7 +39,7 @@
             </form>
         </button>
         <button >
-            <form method="post" action="<%=request.getContextPath()%>/FirstServlet">
+            <form method="post" action="<%=request.getContextPath()%>/FirstServlet"><%--This form for the search--%>
                 <input  type="searchtext" name="searchtext" placeholder="Search"><br />
                 <br />
                 <input type="hidden" value="<%=stringHello%>" name="searchFile">
@@ -47,8 +47,10 @@
             </form>
         </button>
     </div>
-    <div class="all">
+    <div class="all"><%--In the down we show the list of files--%>
+
     <%
+
         ArrayList<AboutFile> files = new ArrayList<>();
         files = (ArrayList<AboutFile>) request.getAttribute("ListFile");
         String str ="";
@@ -81,4 +83,4 @@
         }
     %>
 
-<%@include file="jsp/footer.jsp"%>
+<%@include file="jsp/footer.jsp"%><%--There we include footer.jsp--%>

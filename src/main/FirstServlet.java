@@ -1,5 +1,7 @@
 package main;
 
+import org.jetbrains.annotations.NotNull;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,17 +38,17 @@ public class FirstServlet extends HttpServlet {
             }
         }
     }
-    /*@Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    @Override
+    protected void doPost(@NotNull HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String  str= req.getParameter("searchtext");
         String  path= req.getParameter("searchFile");
         File file=new File(path);
         AboutFile aboutFile=new AboutFile();
-        ArrayList<File> arrayList=aboutFile.getFiles(file,str);
+        ArrayList<AboutFile> arrayList=aboutFile.getFiles(file,str);
         req.setAttribute("ListFile",arrayList);
         req.setAttribute("Path",path);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
-    }*/
+    }
 
 
 }

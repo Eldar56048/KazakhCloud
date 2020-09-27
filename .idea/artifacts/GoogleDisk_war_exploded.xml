@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="GoogleDisk:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/GoogleDisk_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="GoogleDisk/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="GoogleDisk" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
